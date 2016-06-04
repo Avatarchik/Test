@@ -1,0 +1,376 @@
+ConState 41
+	description inWater stand
+	nextState 41
+	transitionOn timeUp
+	stateStance left
+	time 1.5
+	doubleStanceMode true
+	doIPBelence false
+	comOffsetSagittal 0
+	comOffsetCoronal 0
+	velSagittal 0
+	velCoronal 0
+	iPStepScale 0.6
+	belenceError 0.2
+	stepHeight 0.6
+	swingStepLength 0
+	standStepLength 0
+	sagittalStepWidth 0
+	coronalStepWidth -0.1
+	rootExternalTorqueKp 10
+	rootExternalTorqueKd 100
+	rootExternalForceKp 0
+	rootExternalForceKd 0
+	fixedPositionKp 0
+	fixedPositionKd 0
+	velInAir 0
+	bodySpringKp 500
+	bodySpringKd 50
+	continueTrajectory false
+
+
+
+
+
+
+	trajectory root
+		component
+		rotationAxis 1 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 1 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 1
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory SWING_Hip
+		component
+		rotationAxis 1 0 0
+			baseTrajectory
+				0 -40
+				0.25 20
+				0.5 -40
+				0.75 20
+				1 -40
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 1 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 1
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory STANCE_Hip
+		component
+		rotationAxis 1 0 0
+			baseTrajectory
+				0 20
+				0.25 -40
+				0.5 20
+				0.75 -40
+				1 20
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 1 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 1
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory SWING_Knee
+		component
+		rotationAxis 1 0 0
+			baseTrajectory
+				0 0
+				0.25 30
+				0.5 0
+				0.75 30
+				1 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 1 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 1
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory STANCE_Knee
+		component
+		rotationAxis 1 0 0
+			baseTrajectory
+				0 30
+				0.25 0
+				0.5 30
+				0.75 0
+				1 30
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 1 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 1
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory SWING_Shoulder
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv -4
+				reversedCD false
+				reversedCV false
+				vMin -10
+				vMax 15
+			/feedback
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv 4
+				reversedCD false
+				reversedCV true
+				vMin -10
+				vMax 15
+			/feedback
+			baseTrajectory
+				0 90
+				0.3 40
+				1 80
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv -3
+				reversedCD false
+				reversedCV true
+				vMin 0
+				vMax 10
+			/feedback
+			baseTrajectory
+				0 50
+				0.3 20
+				1 50
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory STANCE_Shoulder
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv -4
+				reversedCD false
+				reversedCV true
+				vMin -10
+				vMax 15
+			/feedback
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv -4
+				reversedCD false
+				reversedCV true
+				vMin -10
+				vMax 15
+			/feedback
+			baseTrajectory
+				0 -80
+				0.3 -40
+				1 -90
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv 3
+				reversedCD false
+				reversedCV true
+				vMin 0
+				vMax 10
+			/feedback
+			baseTrajectory
+				0 -50
+				0.3 -20
+				1 -50
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory SWING_Elbow
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv -4
+				reversedCD false
+				reversedCV true
+				vMin 0
+				vMax 10
+			/feedback
+			baseTrajectory
+				0 -60
+				0.3 -20
+				1 -40
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory STANCE_Elbow
+		component
+		rotationAxis 0 0 0
+			feedback linear
+				feedbackProjectionAxis 0 1 0
+				cd 0
+				cv -4
+				reversedCD false
+				reversedCV true
+				vMin 0
+				vMax 10
+			/feedback
+			baseTrajectory
+				0 -60
+				0.3 -20
+				1 -40
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory pelvis_torso
+		component
+		rotationAxis 1 0 0
+			baseTrajectory
+				0 -10
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 1 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 1
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+
+
+	trajectory torso_head
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 10
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+		component
+		rotationAxis 0 0 0
+			baseTrajectory
+				0 0
+			/baseTrajectory
+		/component
+	/trajectory
+/ConState
